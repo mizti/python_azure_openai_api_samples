@@ -5,8 +5,8 @@ Azure OpenAIサービスにデプロイしたモデルに対して対話的に�
 ## 前提
 
  * Azure OpenAIサービスでアカウントが作られていること
- * Public AccessがAllowされていること
-* (Azure AD認証を行う場合)認証する主体がAzure OpenAIサービスアカウントに対してCognitive Services OpenAI Userロールを持っていること
+ * Public AccessがAllowされていること(リソース管理>ネットワークから確認)
+ * (Azure AD認証を行う場合)認証する主体がAzure OpenAIサービスアカウントに対してCognitive Services OpenAI Userロールを持っていること
 
 ## ファイルの説明
 
@@ -37,7 +37,9 @@ APIキーはポータルのAzure OpenAIアカウントの「リソース管理�
 
 ### エンドポイントの修正
 
-環境に合わせて各ファイル内の ``openai.api_base`` を適宜書き換えてください。
+* 環境に合わせて各ファイル内の ``openai.api_base`` と ``engine`` を適宜書き換えてください。
+  * openai.api_base: 作成されたAzure OpenAIアカウントの概要 > エンドポイント
+  * engine: Azure OpenAIアカウントのリソース管理 > モデル デプロイ から確認できるモデル デプロイ名
 
 ### 呼び出し
 
