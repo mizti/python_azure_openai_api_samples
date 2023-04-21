@@ -22,10 +22,14 @@ Azure AD認証する例です。
 ## 使い方
 
 ### パッケージのインストール
-
+#### Option 1: Pythonが既にローカルにインストールされている場合
 ```bash
 pip install -r requirements.txt
 ```
+#### Option 2: dev containerを使う場合
+以下の手順を使うと、`.devcontainer/devcontainer.json`に指定しているdev containerが起動し、その中からVS Codeが起動します。Python・Azure CLI・requirementsがインストールされている環境でVS Codeが再起動されます。
+1. VS CodeのCommand Palette（Ctrl + Shift + P）を開き
+2. Dev Containers: Reopen in Containerを選択
 
 ### APIキーの定義
 
