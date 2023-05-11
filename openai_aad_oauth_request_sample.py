@@ -9,7 +9,7 @@ import json
 
 # Needed Role: Cognitive Services OpenAI User 
 
-# Default Credential
+# Default Credential. testcomment
 #default_credential = DefaultAzureCredential()
 #token = default_credential.get_token("https://cognitiveservices.azure.com/.default")
 
