@@ -6,7 +6,7 @@ Azure OpenAIサービスにデプロイしたモデルに対して対話的に�
 
  * Azure OpenAIサービスでアカウントが作られていること
  * Public AccessがAllowされていること(リソース管理>ネットワークから確認)
- * (Azure AD認証を行う場合)認証する主体がAzure OpenAIサービスアカウントに対してCognitive Services OpenAI Userロールを持っていること
+ * (EntraID認証を行う場合)認証する主体がAzure OpenAIサービスアカウントに対してCognitive Services OpenAI Userロールを持っていること
 
 ## ファイルの説明
 
@@ -16,7 +16,7 @@ APIキーで認証する例です。
 
 2. openai_aad_oauth_request_sample.py
 
-Azure AD認証する例です。
+EntraID認証する例です。
 （デフォルトではAZ CLIで認証する形になっていますが、コメントアウトする箇所を変えていただくことで環境変数のCLIENT_ID認証やDefaultToken取得も行えます）
 
 ## 使い方
@@ -31,21 +31,20 @@ pip install -r requirements.txt
 1. VS CodeのCommand Palette（Ctrl + Shift + P）を開き
 2. Dev Containers: Reopen in Containerを選択
 
-### APIキーの定義
+### 変数の定義
 
-（APIキー認証の場合のみ)
+（値は例です、OPENAI_API_KEYはAPIキー認証の場合のみ)
 ```bash
+export MODEL_DEPLOY_NAME="yourmodeldeployname"
+export AOAI_ENDPOINT="https://youraoai.openai.azure.com/"
+export API_VERSION="2024-02-01"
 export OPENAI_API_KEY="xxxxxxxxxxxxxxxxxxxx"
 ```
-APIキーはポータルのAzure OpenAIアカウントの「リソース管理」 > 「キーとエンドポイント」から確認できます。
-
-### エンドポイントの修正
-
-* 環境に合わせて各ファイル内の ``openai.api_base`` と ``engine`` を適宜書き換えてください。
-  * openai.api_base: 作成されたAzure OpenAIアカウントの概要 > エンドポイント
-  * engine: Azure OpenAIアカウントのリソース管理 > モデル デプロイ から確認できるモデル デプロイ名
+* APIキーはポータルのAzure OpenAIアカウントの「リソース管理」 > 「キーとエンドポイント」から確認できます。
+* APIバージョンについては ``https://learn.microsoft.com/ja-jp/azure/ai-services/openai/reference`` で確認ください
 
 ### 呼び出し
+引数は特に不要です
 
 ```bash
 python openai_apikey_request_sample.py
