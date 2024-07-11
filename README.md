@@ -17,7 +17,14 @@ APIキーで認証する例です。
 2. openai_aad_oauth_request_sample.py
 
 EntraID認証する例です。
-（デフォルトではAZ CLIで認証する形になっていますが、コメントアウトする箇所を変えていただくことで環境変数のCLIENT_ID認証やDefaultToken取得も行えます）
+
+3. openai_apikey_request_async_sample.py
+
+APIキーで認証、かつストリーム取得の例です。また、このサンプルでは``AsyncAzureOpenAI``を用いることで並列実行にも対応しています。
+
+4. openai_entraid_oauth_request_async_sample.py
+
+EntraID認証、かつ非同期取得の例です。
 
 ## 使い方
 
