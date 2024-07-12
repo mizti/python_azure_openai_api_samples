@@ -20,11 +20,11 @@ EntraID認証する例です。
 
 3. openai_apikey_request_async_sample.py
 
-APIキーで認証、かつストリーム取得の例です。また、このサンプルでは``AsyncAzureOpenAI``を用いることで並列実行にも対応しています。
+APIキーで認証、かつストリーム取得の例です。また、このサンプルでは``AsyncAzureOpenAI``を用いることで並行実行にも対応しています。
 
 4. openai_entraid_oauth_request_async_sample.py
 
-EntraID認証、かつ非同期取得の例です。
+EntraID認証、かつ非同期取得の例です。このサンプルでも並行実行に対応しています。
 
 ## 使い方
 
